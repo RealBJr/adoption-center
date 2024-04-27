@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Form which the person who has a pet to give up for 
+adoption will need to fill out, authentication necessary -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give a Pet Away</title>
+    <link rel="stylesheet" href="../style/generic_layout.css">
+    <link rel="stylesheet" href="../style/give_away.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="../script/clock.js"></script>
+    <script src="../script/signature.js"></script>
+</head>
+
+<body>
+    <%- header %>
+        <aside id="side-menu" tabindex="0">
+            <!--Contains contextual navigation links, repeated-->
+            <nav>
+                <div class="icon-txt">
+                    <a href="index.ejs">
+                        <img src="../images/house-unfilled.png" alt="">
+                        <span class="pointer">Home</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="find.ejs">
+                        <img src="../images/search-heart-unfilled.png" alt="">
+                        <span class="pointer">Find a dog/cat</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="care/cat.ejs">
+                        <img src="../images/shield-cat-unfilled.png" alt="">
+                        <span class="pointer">Cat Care</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="care/dog.ejs">
+                        <img src="../images/shield-dog-unfilled.png" alt="">
+                        <span class="pointer">Dog Care</span>
+                    </a>
+                </div>
+                <div class="icon-txt active">
+                    <a href="give_away.ejs">
+                        <img src="../images/hand-holding-heart-filled.png" alt="">
+                        <span class="pointer">Have a pet to give away</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="contact_us.ejs">
+                        <img src="../images/customer-service-unfilled.png" alt="">
+                        <span class="pointer">Contact Us</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        <main>
+            <h2>Give A Pet Away</h2>
+            <form action="/giveaway" method="POST" id="surface-info">
+                <div id="animal">
+                    Cat or dog? :
+                    <input type="radio" name="animal" id="animal_dog" value="dog">
+                    <label for="animal_dog">Dog</label>
+                    <input type="radio" name="animal" id="animal_cat" value="cat">
+                    <label for="animal_cat">Cat</label>
+                </div>
+                <!-- Type of pet is not necessary, by default list will load both -->
+                <!-- Invisible unless dog chose, breeds and age groups vary -->
+                <fieldset id="dog">
+                    <legend>Specific Dog Info</legend>
+                    <select name="dog_breed">
+                        <option value="none">-Select dog breed-</option>
+                        <option value="chowchow">Chow chow</option>
+                        <option value="husky">Husky</option>
+                        <option value="samoyed">Samoyed</option>
+                        <option value="dne">Doesn't matter</option>
+                    </select>
+
+                    <select name="dog_age">
+                        <option value="none">-Select Age in dog years*-</option>
+                        <option value="1">1-2 years old</option>
+                        <option value="3">3-6 years old</option>
+                        <option value="7">7-11 years old</option>
+                        <option value="dne">Doesn't matter</option>
+                    </select><br>
+                    <sub>* Note: The first year of a dog's life is equal to 15 human years. The second year of a dog's
+                        life
+                        is equal to about 9 human years. Each additional year is equal to about four or five human
+                        years.
+                    </sub>
+                </fieldset>
+
+                <!-- Invisible unless cat option chose, breeds and age groups vary -->
+                <fieldset id="cat">
+                    <legend>Specific Cat Info</legend>
+                    <select name="cat_breed">
+                        <option value="none">-Select cat breed-</option>
+                        <option value="brit">British shorthair</option>
+                        <option value="bobtail">American bobtail</option>
+                        <option value="birman">Birman</option>
+                        <option value="dne">Doesn't matter</option>
+                    </select>
+
+                    <select name="cat_age">
+                        <option value="none">-Select Age in cat years*-</option>
+                        <option value="1">1-2 years old</option>
+                        <option value="3">3-6 years old</option>
+                        <option value="7">7-11 years old</option>
+                        <option value="dne">Doesn't matter</option>
+                    </select><br>
+                    <sub>* Note: The first year of a cat's life is equal to 15 human years. The second year of a dog's
+                        life
+                        is equal to about 24 human years. Each additional year is equal to about four or five human
+                        years.
+                    </sub>
+                </fieldset>
+
+                <fieldset id="general-info">
+                    <legend>General Information</legend>
+                    His gender:
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="either" value="either">
+                    <label for="either">Either</label>
+                    <br>
+
+                    Does it get along with ...
+                    <ol>
+                        <li>
+                            Other Dogs
+                            <input type="radio" name="dog-amicable" id="dog-amicable-yes" value="true">
+                            <label for="dog-amicable-yes">Yes</label>
+                            <input type="radio" name="dog-amicable" id="dog-amicable-no" value="false">
+                            <label for="dog-amicable-no">No</label>
+                        </li>
+                        <li>
+                            Other Cats
+                            <input type="radio" name="cat-amicable" id="cat-amicable-yes" value="true">
+                            <label for="cat-amicable-yes">Yes</label>
+                            <input type="radio" name="cat-amicable" id="cat-amicable-no" value="false">
+                            <label for="cat-amicable-no">No</label>
+                        </li>
+                        <li>
+                            Small children
+                            <input type="radio" name="children-amicable" id="children-amicable-yes" value="true">
+                            <label for="children-amicable-yes">Yes</label>
+                            <input type="radio" name="children-amicable" id="children-amicable-no" value="false">
+                            <label for="children-amicable-no">No</label>
+                        </li>
+                    </ol>
+                </fieldset>
+
+                <fieldset id="owner-info">
+                    <legend>Owner information</legend>
+                    <label for="name">First Name: </label>
+                    <input type="text" name="fname" id="fname">
+                    <br>
+                    <label for="name">Last Name: </label>
+                    <input type="text" name="lname" id="lname">
+                    <br>
+                    <label for="email">Email: </label>
+                    <input type="text" name="email" id="email">
+                </fieldset>
+
+                <textarea name="additional" id="additional" cols="50"
+                    rows="10">Sell your pet! What are his best traits?</textarea>
+
+                <input type="submit" value="Submit" id="submit">
+                <input type="reset" value="Clear" id="clear">
+
+            </form>
+        </main>
+
+        <%- footer %>
+            <script src="../script/form_verification.js"></script>
+            <script src="../script/field_verification.js"></script>
+</body>
+
+</html>

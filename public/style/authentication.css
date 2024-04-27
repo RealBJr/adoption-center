@@ -1,0 +1,25 @@
+#brand-signature {
+    background-color: #caefe4;
+    flex-direction: row-reverse;
+}
+
+#centerpiece h1 a {
+    color: black;
+}
+
+#title {
+    text-align: center;
+}
+
+.issue {
+    display: none;
+    color: red;
+}
+
+#taken {
+    color: purple;
+}
+
+#login-username {
+    color: aquamarine;
+}

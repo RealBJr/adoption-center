@@ -1,0 +1,83 @@
+h2 {
+    text-align: center;
+}
+
+main {
+    height: 75vh;
+}
+
+#slideshow {
+    border: #38a3a5 3px solid;
+    background-color: #57cc99;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#photo {
+    width: 40%;
+    height: 80%;
+    z-index: 1;
+    border-radius: 5%;
+    transition: margin-left 0.3s;
+    border: 3px white solid;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#previous,
+#next {
+    width: 10%;
+    height: 100%;
+    opacity: 0.5;
+    transition: opacity 0.3s, background-image 0.3s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#previous {
+    background-image: linear-gradient(to right, #38a3a5, #57cc99);
+}
+
+#next {
+    background-image: linear-gradient(to left, #38a3a5, #57cc99)
+}
+
+#previous:hover,
+#next:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    height: 90%;
+    font-size: large;
+    font-weight: 900;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+#info h2 {
+    height: 15px;
+    color: white;
+}
+
+#info-inner {
+    color: white;
+    border: 6px white solid;
+    text-align: center;
+    margin-right: 4%;
+}

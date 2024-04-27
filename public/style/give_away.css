@@ -1,0 +1,9 @@
+#dog,
+#cat {
+    display: none;
+}
+
+textarea {
+    margin-top: 3%;
+    display: block;
+}

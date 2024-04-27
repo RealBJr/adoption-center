@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../style/generic_layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="../script/clock.js"></script>
+    <script src="../script/signature.js"></script>
+</head>
+
+<body>
+    <%- header %>
+        <aside id="side-menu" tabindex="0">
+            <!--Contains contextual navigation links, repeated-->
+            <nav>
+                <div class="icon-txt">
+                    <a href="index.ejs">
+                        <img src="../images/house-unfilled.png" alt="house-heart">
+                        <span class="pointer">Home</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="find.ejs">
+                        <img src="../images/search-heart-unfilled.png" alt="find">
+                        <span class="pointer">Find a dog/cat</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="care/cat.ejs">
+                        <img src="../images/shield-cat-unfilled.png" alt="cat-shield">
+                        <span class="pointer">Cat Care</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="care/dog.ejs">
+                        <img src="../images/shield-dog-unfilled.png" alt="dog-shield">
+                        <span class="pointer">Dog Care</span>
+                    </a>
+                </div>
+                <div class="icon-txt">
+                    <a href="give_away.ejs">
+                        <img src="../images/hand-holding-heart-unfilled.png" alt="give-away">
+                        <span class="pointer">Have a pet to give away</span>
+                    </a>
+                </div>
+                <div class="icon-txt active">
+                    <a href="contact_us.ejs">
+                        <img src="../images/customer-service-filled.png" alt="contact-us">
+                        <span class="pointer">Contact Us</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main>
+            <!--Main content displayed-->
+            <h2>Contact info</h2>
+            <span id="name">Boni, Junior</span>
+            <span id="student-id">40287501</span>
+            <span id="email">JuniorBoni@gmail.com</span>
+            <a href="https://github.com/RealBJr" id="github">RealBJr</a>
+            <a href="https://www.linkedin.com/in/juniorboni/" id="linkedin">Junior Boni</a>
+        </main>
+
+        <%- footer %>
+</body>
+
+</html>

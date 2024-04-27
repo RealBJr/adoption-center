@@ -1,0 +1,39 @@
+#dog,
+#cat {
+    display: none;
+}
+
+/*Will be changed with Javascript*/
+
+.display,
+.on {
+    display: block;
+}
+
+.hide,
+#slideshow.off,
+#list.off {
+    display: none;
+}
+
+#list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Adjust spacing between profiles */
+}
+
+/* Style for each individual pet profile */
+.pet {
+    width: calc(33.33% - 10px);
+    /* Adjust width to fit three profiles per row with spacing */
+    margin-bottom: 20px;
+    /* Adjust margin between rows */
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#displayer {
+    height: 200vh
+}

@@ -1,0 +1,25 @@
+#bg-slideshow {
+    position: absolute;
+    z-index: -1;
+    background-image: url("../images/slideshow0.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    opacity: 0.5;
+    height: 40%;
+    width: 100%;
+    transition: background-image 2s ease-out;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+main {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
